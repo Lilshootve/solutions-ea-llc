@@ -1,6 +1,6 @@
 /* SOLUTIONS EA LLC - Global Styles */
 :root {
-  --bg: #f7f8fa;
+  --bg: #eef1f4;
   --surface: #ffffff;
   --text: #111318;
   --muted: #5b6670;
@@ -66,6 +66,38 @@ textarea {
 
 .section {
   padding: var(--section-pad) 0;
+}
+
+.section:nth-of-type(even) {
+  background: #2b2d42;
+  color: #f4f6f8;
+}
+
+.section:nth-of-type(even) .section-title {
+  color: #f4f6f8;
+}
+
+.section:nth-of-type(even) .section-subtitle {
+  color: #cbd2d9;
+}
+
+.section:nth-of-type(even) .card {
+  color: var(--text);
+}
+
+.section:nth-of-type(even) .card-title {
+  color: var(--text);
+}
+
+.section:nth-of-type(even) .btn-outline {
+  border-color: #98a1ab;
+  color: #f4f6f8;
+}
+
+.section:nth-of-type(even) .btn-outline:hover {
+  border-color: var(--accent);
+  color: #1a1a1a;
+  background: #fff7e0;
 }
 
 .section-title {
@@ -181,7 +213,7 @@ textarea {
 }
 
 .brand-mark img {
-  height: 30px;
+  height: 22px;
   width: auto;
 }
 
@@ -450,7 +482,7 @@ textarea {
 }
 
 .footer-mark img {
-  height: 34px;
+  height: 24px;
   width: auto;
 }
 
