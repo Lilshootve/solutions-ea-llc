@@ -16,9 +16,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.solutionseallc.com" />
     <meta property="og:site_name" content="SOLUTIONS EA LLC" />
+    <link rel="canonical" href="https://www.solutionseallc.com/" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="container nav">
         <a class="brand" href="index.html" aria-label="SOLUTIONS EA LLC">
@@ -34,11 +36,12 @@
           class="nav-toggle"
           aria-label="Toggle navigation"
           aria-expanded="false"
+          aria-controls="primary-navigation"
           data-menu-toggle
         >
           Menu
         </button>
-        <nav class="nav-links" data-menu>
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary" data-menu>
           <a class="active" href="index.html">Home</a>
           <a href="services.html">Services</a>
           <a href="projects.html">Projects</a>
@@ -50,7 +53,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero">
         <div class="container hero-grid">
           <div>
@@ -228,7 +231,7 @@
         </div>
         <div class="footer-links">
           <span>6500 Hoffner Ave, Orlando, FL 32822</span>
-          <span>(407) 639-2669</span>
+          <span>407-639-2669</span>
           <span>sales@solutionseallc.com</span>
           <span>info@solutionseallc.com</span>
         </div>
