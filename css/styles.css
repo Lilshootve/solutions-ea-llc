@@ -229,8 +229,8 @@ textarea {
 }
 
 .brand-mark img {
-  height: 22px;
-  width: auto;
+  height: 70px;
+  width: 40px;
 }
 
 .brand-text {
@@ -262,6 +262,11 @@ textarea {
 
 .nav-cta {
   margin-left: 1rem;
+  border: 0;
+  border-image: none;
+  color: #000;
+  background-clip: unset;
+  -webkit-background-clip: unset;
 }
 
 .nav-toggle {
