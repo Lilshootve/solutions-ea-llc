@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Request a Quote | SOLUTIONS EA LLC</title>
+    <meta
+      name="description"
+      content="Request a demolition or post-construction service quote. Reach SOLUTIONS EA LLC in Orlando, Florida."
+    />
+    <meta property="og:title" content="Request a Quote | SOLUTIONS EA LLC" />
+    <meta
+      property="og:description"
+      content="Contact SOLUTIONS EA LLC for demolition and post-construction services."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.solutionseallc.com/contact.html" />
+    <meta property="og:site_name" content="SOLUTIONS EA LLC" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="SOLUTIONS EA LLC">
+          SOLUTIONS <span class="accent">EA LLC</span>
+        </a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          data-menu-toggle
+        >
+          Menu
+        </button>
+        <nav class="nav-links" data-menu>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a class="nav-cta btn btn-accent active" href="contact.html"
+            >Request a Quote</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="pill">Request a Quote</span>
+          <h1>Let’s discuss your project</h1>
+          <p>
+            Share your scope, timeline, and location. Our team will provide a
+            clear plan and a fast response.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-grid">
+          <div class="contact-card">
+            <h2 class="section-title">Contact details</h2>
+            <p class="section-subtitle">
+              SOLUTIONS EA LLC<br />
+              6500 Hoffner Ave, Orlando, FL 32822
+            </p>
+            <div class="footer-links">
+              <span>(407) 639-2669</span>
+              <span>sales@solutionseallc.com</span>
+              <span>info@solutionseallc.com</span>
+            </div>
+            <div class="map-placeholder" aria-label="Map placeholder">
+              Map Placeholder
+            </div>
+          </div>
+          <div class="contact-card">
+            <h2 class="section-title">Project inquiry</h2>
+            <form
+              action="mailto:sales@solutionseallc.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="form-row">
+                <div>
+                  <label for="name">Full name</label>
+                  <input id="name" name="name" type="text" required />
+                </div>
+                <div>
+                  <label for="company">Company</label>
+                  <input id="company" name="company" type="text" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div>
+                  <label for="service">Service type</label>
+                  <select id="service" name="service" required>
+                    <option value="">Select service</option>
+                    <option>Commercial Demolition</option>
+                    <option>Post-Construction Cleanup</option>
+                    <option>Warehouse &amp; Office Spaces</option>
+                    <option>Residential Projects</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="location">City / State</label>
+                  <input id="location" name="location" type="text" required />
+                </div>
+              </div>
+              <div>
+                <label for="message">Project details</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">
+                Send Request
+              </button>
+              <p class="section-subtitle" style="margin: 0.6rem 0 0">
+                This form uses email delivery for now and can be connected to a
+                secure form endpoint later.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">SOLUTIONS EA LLC</div>
+          <p class="footer-muted">
+            Demolition &amp; Post-Construction Services
+          </p>
+        </div>
+        <div class="footer-links">
+          <span>6500 Hoffner Ave, Orlando, FL 32822</span>
+          <span>(407) 639-2669</span>
+          <span>sales@solutionseallc.com</span>
+          <span>info@solutionseallc.com</span>
+        </div>
+        <div class="footer-links">
+          <span>Commercial Demolition</span>
+          <span>Post-Construction Cleanup</span>
+          <span>Warehouses &amp; Offices</span>
+          <span>Residential Projects</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SOLUTIONS EA LLC",
+        "url": "https://www.solutionseallc.com",
+        "telephone": "+1-407-639-2669",
+        "email": ["sales@solutionseallc.com", "info@solutionseallc.com"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "6500 Hoffner Ave",
+          "addressLocality": "Orlando",
+          "addressRegion": "FL",
+          "postalCode": "32822",
+          "addressCountry": "US"
+        },
+        "areaServed": "US"
+      }
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
