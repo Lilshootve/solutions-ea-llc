@@ -391,7 +391,60 @@ textarea {
   align-items: start;
 }
 
+.service-stack {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.service-block {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.service-block:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.service-content p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.service-highlights {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+
+.service-highlights li {
+  margin-bottom: 0.5rem;
+}
+
+.service-image {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .sidebar {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.sidebar-card {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -399,8 +452,12 @@ textarea {
   box-shadow: var(--shadow);
 }
 
-.sidebar h3 {
+.sidebar-card h3 {
   margin-top: 0;
+}
+
+.sidebar-cta .btn {
+  margin-top: 0.75rem;
 }
 
 .project-card img {
@@ -555,6 +612,22 @@ textarea {
 
   .service-layout {
     grid-template-columns: 2.2fr 1fr;
+  }
+
+  .service-block {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .service-block.reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .service-block.reverse .service-content {
+    order: 2;
+  }
+
+  .service-block.reverse .service-image {
+    order: 1;
   }
 
   .about-grid {
