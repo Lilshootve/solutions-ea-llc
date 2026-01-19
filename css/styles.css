@@ -282,17 +282,13 @@ textarea {
 }
 
 .home .home-hero {
-  background-color: var(--bg);
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.75),
-      rgba(255, 255, 255, 0.75)
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.88),
+      rgba(255, 255, 255, 0.88)
     ),
-    url("images/Interior-Demolition-2.jpg"),
-    url("images/image1.jpg"),
-    url("images/image2.jpg");
-  background-repeat: no-repeat;
-  background-position: center center, top center, center center, bottom center;
-  background-size: cover, cover, cover, cover;
+    url("images/Interior-Demolition-2.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-grid {
