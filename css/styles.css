@@ -281,7 +281,7 @@ textarea {
   padding: clamp(3rem, 6vw, 6rem) 0;
 }
 
-.home .hero {
+.home .home-hero {
   background-color: var(--bg);
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.75),
