@@ -84,7 +84,7 @@ textarea {
 }
 
 .section:nth-of-type(even) {
-  background: #2b2d42;
+  background: rgba(61, 63, 87, 1);
   color: #f4f6f8;
 }
 
@@ -123,7 +123,7 @@ textarea {
 }
 
 .section-subtitle {
-  color: var(--muted);
+  color: var(--border);
   margin: 0 0 2rem;
   max-width: 760px;
 }
@@ -264,7 +264,7 @@ textarea {
   margin-left: 1rem;
   border: 0;
   border-image: none;
-  color: #000;
+  color: var(--dark);
   background-clip: unset;
   -webkit-background-clip: unset;
 }
@@ -411,13 +411,13 @@ textarea {
 
 .service-content p {
   margin: 0 0 1rem;
-  color: var(--muted);
+  color: var(--bg);
 }
 
 .service-highlights {
   margin: 0;
   padding-left: 1.1rem;
-  color: var(--text);
+  color: var(--border);
 }
 
 .service-highlights li {
@@ -445,7 +445,7 @@ textarea {
 }
 
 .sidebar-card {
-  background: #fff;
+  background: rgba(43, 45, 66, 1);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.5rem;
