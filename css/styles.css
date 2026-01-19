@@ -123,7 +123,7 @@ textarea {
 }
 
 .section-subtitle {
-  color: var(--border);
+  color: var(--muted);
   margin: 0 0 2rem;
   max-width: 760px;
 }
@@ -486,13 +486,17 @@ textarea {
 
 .service-content p {
   margin: 0 0 1rem;
-  color: var(--bg);
+  color: var(--muted);
 }
 
 .service-highlights {
   margin: 0;
   padding-left: 1.1rem;
-  color: var(--border);
+  color: var(--muted);
+}
+
+.service-highlights li::marker {
+  color: var(--accent-dark);
 }
 
 .service-highlights li {
@@ -549,6 +553,11 @@ textarea {
   border-radius: var(--radius);
   padding: 1.5rem;
   box-shadow: var(--shadow);
+  color: #f4f6f8;
+}
+
+.sidebar-card p {
+  color: #cbd2d9;
 }
 
 .sidebar-card h3 {
