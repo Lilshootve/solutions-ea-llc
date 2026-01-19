@@ -30,6 +30,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.home {
+  background-color: var(--bg);
+  background-image: url("images/Interior-Demolition-2.jpg"),
+    url("images/image1.jpg"),
+    url("images/image2.jpg");
+  background-repeat: no-repeat;
+  background-position: top center, center center, bottom center;
+  background-size: cover, cover, cover;
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
