@@ -362,7 +362,7 @@ textarea {
 }
 
 .feature-block {
-  padding-top: 1.25rem;
+  padding: 1.5rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -373,8 +373,16 @@ textarea {
 
 .feature-title {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
+}
+
+.executive-grid {
+  gap: 0;
+}
+
+.executive-grid .feature-block:first-child {
+  border-top: none;
 }
 
 .deliverables {
@@ -383,6 +391,10 @@ textarea {
   color: var(--muted);
   margin: 0;
   padding-left: 1.25rem;
+}
+
+.deliverables {
+  margin-top: 0.5rem;
 }
 
 .deliverables li {
@@ -408,6 +420,23 @@ textarea {
 .editorial-block {
   border-left: 3px solid var(--accent);
   padding-left: 1.5rem;
+}
+
+.manifesto {
+  gap: 3rem;
+}
+
+.manifesto .section-title {
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+}
+
+.manifesto .section-subtitle {
+  font-size: 1.05rem;
+  max-width: 32rem;
+}
+
+.manifesto p {
+  font-size: 1.02rem;
 }
 
 .editorial-block .section-title {
@@ -529,6 +558,20 @@ textarea {
 
 .about .section-dark .principle-list p {
   color: #cbd2d9;
+}
+
+.principles-bold li {
+  border-left-width: 4px;
+  padding-left: 1.25rem;
+}
+
+.principles-bold .card-title {
+  font-size: 1.3rem;
+}
+
+.principles-bold p {
+  margin-top: 0.35rem;
+  max-width: 32rem;
 }
 
 .about .cta-band {
