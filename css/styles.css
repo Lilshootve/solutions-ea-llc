@@ -30,16 +30,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body.home {
-  background-color: var(--bg);
-  background-image: url("images/Interior-Demolition-2.jpg"),
-    url("images/image1.jpg"),
-    url("images/image2.jpg");
-  background-repeat: no-repeat;
-  background-position: top center, center center, bottom center;
-  background-size: cover, cover, cover;
-}
-
 .skip-link {
   position: absolute;
   left: -999px;
@@ -289,6 +279,20 @@ textarea {
 
 .hero {
   padding: clamp(3rem, 6vw, 6rem) 0;
+}
+
+.home .hero {
+  background-color: var(--bg);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
+    url("images/Interior-Demolition-2.jpg"),
+    url("images/image1.jpg"),
+    url("images/image2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center, top center, center center, bottom center;
+  background-size: cover, cover, cover, cover;
 }
 
 .hero-grid {
