@@ -887,24 +887,83 @@ a.nav-cta {
   border-color: rgba(15, 23, 32, 0.18);
 }
 
+.project-featured {
+  background: #fff7e0;
+  border-color: rgba(197, 146, 0, 0.3);
+}
+
+.project-featured .project-badge {
+  background: #ffffff;
+  border-color: rgba(197, 146, 0, 0.4);
+}
+
 .project-media {
+  position: relative;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: #f7f8fa;
   padding: 1rem;
+  overflow: hidden;
+}
+
+.project-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(238, 241, 244, 0.95));
+}
+
+.project-media::after {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(216, 222, 228, 0.7);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(216, 222, 228, 0.35) 0,
+      rgba(216, 222, 228, 0.35) 1px,
+      transparent 1px,
+      transparent 16px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      rgba(216, 222, 228, 0.35) 0,
+      rgba(216, 222, 228, 0.35) 1px,
+      transparent 1px,
+      transparent 16px
+    );
+  pointer-events: none;
 }
 
 .project-media img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   margin: 0;
+  opacity: 0.22;
+  filter: grayscale(1);
 }
 
 .project-body {
   display: grid;
   gap: 0.75rem;
+}
+
+.project-flag {
+  width: fit-content;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: var(--dark);
+  color: #fff;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .project-badge {
@@ -948,6 +1007,16 @@ a.nav-cta {
 .project-note {
   margin-top: 0.75rem;
   max-width: 580px;
+}
+
+.project-authority {
+  margin: 0.75rem 0 0;
+  max-width: 680px;
+}
+
+.project-bridge {
+  margin-top: 2.5rem;
+  max-width: 760px;
 }
 
 .capability-grid {
@@ -1218,6 +1287,10 @@ textarea {
   .legal-sidebar {
     position: sticky;
     top: 6.5rem;
+  }
+
+  .project-featured {
+    grid-column: span 2;
   }
 }
 
