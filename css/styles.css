@@ -97,7 +97,8 @@ textarea {
 }
 
 .section-dark {
-  background: rgba(61, 63, 87, 1);
+  background-color: rgba(61, 63, 87, 1);
+  background-image: none;
   color: #f4f6f8;
 }
 
@@ -135,10 +136,13 @@ textarea {
   letter-spacing: -0.02em;
   font-weight: 700;
   line-height: 1.2;
+  color: rgba(0, 0, 0, 1);
+  background-clip: unset;
+  -webkit-background-clip: unset;
 }
 
 .section-subtitle {
-  color: var(--muted);
+  color: rgba(0, 0, 0, 1);
   margin: 0 0 2rem;
   max-width: 760px;
   font-size: 1.02rem;
@@ -209,8 +213,10 @@ textarea {
 
 .btn-outline {
   border-color: var(--border);
-  color: var(--text);
+  color: var(--accent);
   background: transparent;
+  background-clip: unset;
+  -webkit-background-clip: unset;
 }
 
 .btn-outline:hover {
@@ -286,7 +292,7 @@ textarea {
   border-bottom-color: var(--accent);
 }
 
-.nav-cta {
+a.nav-cta {
   margin-left: 1rem;
   border: 0;
   border-image: none;
@@ -576,7 +582,8 @@ textarea {
 }
 
 .about .section-dark {
-  background: rgba(61, 63, 87, 1);
+  background-color: rgba(61, 63, 87, 1);
+  background-image: none;
   color: #f4f6f8;
 }
 
@@ -652,7 +659,7 @@ textarea {
 .service-highlights {
   margin: 0;
   padding-left: 1.25rem;
-  color: var(--surface);
+  color: var(--border);
 }
 
 .service-highlights li::marker {
@@ -774,6 +781,11 @@ textarea {
   border-radius: var(--radius);
   padding: 2rem;
   box-shadow: var(--shadow);
+  color: rgba(0, 0, 0, 1);
+}
+
+.contact-card .footer-links {
+  color: rgba(0, 0, 0, 1);
 }
 
 form {
@@ -789,6 +801,7 @@ form {
 label {
   font-weight: 600;
   font-size: 0.95rem;
+  color: rgba(0, 0, 0, 1);
 }
 
 input,
