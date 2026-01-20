@@ -52,7 +52,7 @@
           <a href="services.html">Services</a>
           <a href="projects.html">Projects</a>
           <a href="about.html">About</a>
-          <a class="nav-cta btn btn-accent active" href="contact.html"
+          <a class="nav-cta btn btn-accent active" href="contact.html" aria-current="page"
             >Request a Quote</a
           >
         </nav>
@@ -84,8 +84,16 @@
               <a href="mailto:sales@solutionseallc.com">sales@solutionseallc.com</a>
               <a href="mailto:info@solutionseallc.com">info@solutionseallc.com</a>
             </div>
-            <div class="map-placeholder" aria-label="Map placeholder">
-              Map Placeholder
+            <div class="map-placeholder" aria-label="Map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d727.1946010358616!2d-81.29534358217622!3d28.480359126227086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e763820c878d55%3A0xbd6711f9941b0d32!2s6500%20Hoffner%20Ave%2C%20Orlando%2C%20FL%2032822!5e1!3m2!1ses!2sus!4v1768901659451!5m2!1ses!2sus"
+                title="Map of SOLUTIONS EA LLC, Orlando, FL"
+                width="600"
+                height="450"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
           <div class="contact-card">
@@ -98,28 +106,35 @@
               <div class="form-row">
                 <div>
                   <label for="name">Full name</label>
-                  <input id="name" name="name" type="text" required />
+                  <input id="name" name="name" type="text" autocomplete="name" required />
                 </div>
                 <div>
                   <label for="company">Company</label>
-                  <input id="company" name="company" type="text" />
+                  <input id="company" name="company" type="text" autocomplete="organization" />
                 </div>
               </div>
               <div class="form-row">
                 <div>
                   <label for="email">Email</label>
-                  <input id="email" name="email" type="email" required />
+                  <input id="email" name="email" type="email" autocomplete="email" required />
                 </div>
                 <div>
                   <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel" required />
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    required
+                  />
                 </div>
               </div>
               <div class="form-row">
                 <div>
                   <label for="service">Service type</label>
                   <select id="service" name="service" required>
-                    <option value="">Select service</option>
+                    <option value="" disabled selected hidden>Select service</option>
                     <option>Commercial Demolition</option>
                     <option>Post-Construction Cleanup</option>
                     <option>Warehouse &amp; Office Spaces</option>
@@ -128,7 +143,13 @@
                 </div>
                 <div>
                   <label for="location">City / State</label>
-                  <input id="location" name="location" type="text" required />
+                  <input
+                    id="location"
+                    name="location"
+                    type="text"
+                    autocomplete="address-level2"
+                    required
+                  />
                 </div>
               </div>
               <div>
@@ -166,7 +187,7 @@
           <a
             href="https://www.google.com/maps/search/?api=1&query=6500+Hoffner+Ave,+Orlando,+FL+32822"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             >6500 Hoffner Ave, Orlando, FL 32822</a
           >
           <a href="tel:+14076392669">407-639-2669</a>
