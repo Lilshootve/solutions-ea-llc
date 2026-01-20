@@ -871,11 +871,98 @@ a.nav-cta {
   margin-bottom: 1rem;
 }
 
+.project-grid {
+  margin-top: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  box-shadow: 0 18px 36px rgba(15, 23, 32, 0.12);
+  border-color: rgba(15, 23, 32, 0.18);
+}
+
+.project-media {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #f7f8fa;
+  padding: 1rem;
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin: 0;
+}
+
+.project-body {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.project-badge {
+  width: fit-content;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-detail {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.project-detail strong {
+  color: var(--text);
+}
+
+.project-deliverables {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+  color: var(--muted);
+  display: grid;
+  gap: 0.35rem;
+}
+
 .project-meta {
   color: var(--muted);
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.project-note {
+  margin-top: 0.75rem;
+  max-width: 580px;
+}
+
+.capability-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.capability-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+  color: var(--text);
 }
 
 .about-grid {
@@ -1111,6 +1198,10 @@ textarea {
   }
 
   .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .capability-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
