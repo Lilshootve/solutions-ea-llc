@@ -1233,6 +1233,13 @@ textarea {
   color: #ffffff;
 }
 
+.footer-copyright {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: #9aa5b1;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .hero-grid {
     grid-template-columns: 1.2fr 0.8fr;
