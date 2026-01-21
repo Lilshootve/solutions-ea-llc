@@ -49,7 +49,29 @@
         </button>
         <nav class="nav-links" id="primary-navigation" aria-label="Primary" data-menu>
           <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
+          <div class="nav-dropdown">
+            <button
+              class="nav-dropdown-toggle"
+              aria-expanded="false"
+              aria-controls="services-menu"
+              data-submenu-toggle
+            >
+              Services
+            </button>
+            <div class="nav-submenu" id="services-menu" role="menu" data-submenu>
+              <a role="menuitem" href="services/demolition.html">Demolition Services</a>
+              <a role="menuitem" href="services/post-construction-cleaning.html"
+                >Post-Construction Cleaning</a
+              >
+              <a role="menuitem" href="services/commercial-industrial-cleanup.html"
+                >Commercial &amp; Industrial Cleanup</a
+              >
+              <a role="menuitem" href="services/office-turnover-services.html"
+                >Office Turnover Services</a
+              >
+              <a role="menuitem" href="services/residential-services.html">Residential Services</a>
+            </div>
+          </div>
           <a href="projects.html">Projects</a>
           <a href="about.html">About</a>
           <a class="nav-cta btn btn-accent" href="contact.html"
