@@ -96,6 +96,12 @@ textarea {
   background: #f4f6f8;
 }
 
+.section-themed {
+  background-color: rgba(131, 160, 159, 1);
+  background-image: none;
+  background: linear-gradient(330deg, rgba(235, 172, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
 .section-dark {
   background-color: rgba(61, 63, 87, 1);
   background-image: none;
@@ -602,6 +608,26 @@ a.nav-cta {
   padding: clamp(2.75rem, 5.5vw, 4.5rem) 0 2.5rem;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+}
+
+.about .page-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.about .page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/image 1.jpg") center / cover no-repeat;
+  filter: blur(14px);
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.about .page-hero > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero h1 {
