@@ -102,9 +102,28 @@ textarea {
 }
 
 .section-themed {
-  background-color: rgba(131, 160, 159, 1);
-  background-image: none;
-  background: linear-gradient(330deg, rgba(235, 172, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
+  position: relative;
+  background: url("../images/1000s.jpg") center / cover no-repeat;
+  color: #f8fafc;
+}
+
+.section-themed::before,
+.cta-band::before,
+.legal-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 32, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+.section-themed > .container,
+.cta-band > .container,
+.legal-hero > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-dark {
@@ -139,6 +158,16 @@ textarea {
   border-color: var(--accent);
   color: #1a1a1a;
   background: #fff7e0;
+}
+
+.section-themed .section-title,
+.section-themed .section-subtitle {
+  color: #f8fafc;
+}
+
+.legal-hero > .container > .section-title,
+.legal-hero > .container > p {
+  color: #f8fafc;
 }
 
 .section-title {
@@ -362,6 +391,45 @@ a.nav-cta {
   z-index: 100;
 }
 
+.nav-submenu.mega-menu {
+  min-width: min(860px, 92vw);
+  padding: 1rem;
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.mega-group {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.mega-title {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.nav-submenu.mega-menu a {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  color: var(--muted);
+}
+
+.nav-submenu.mega-menu a small {
+  font-weight: 500;
+  color: #6c7782;
+  line-height: 1.4;
+}
+
+.nav-submenu.mega-menu a.active {
+  background: #fff7e0;
+  color: var(--text);
+}
+
 .nav-submenu a {
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
@@ -380,6 +448,12 @@ a.nav-cta {
 .nav-dropdown:focus-within .nav-submenu,
 .nav-dropdown.open .nav-submenu {
   display: flex;
+}
+
+.nav-dropdown:hover .nav-submenu.mega-menu,
+.nav-dropdown:focus-within .nav-submenu.mega-menu,
+.nav-dropdown.open .nav-submenu.mega-menu {
+  display: grid;
 }
 
 .hero {
@@ -580,7 +654,8 @@ a.nav-cta {
 }
 
 .cta-band {
-  background: var(--dark);
+  position: relative;
+  background: url("../images/1000s.jpg") center / cover no-repeat;
   color: #fff;
   padding: 2.5rem 0;
 }
@@ -651,7 +726,9 @@ a.nav-cta {
 }
 
 .legal-hero {
-  background: linear-gradient(135deg, rgba(255, 247, 224, 0.7), #ffffff);
+  position: relative;
+  background: url("../images/1000s.jpg") center / cover no-repeat;
+  color: #f8fafc;
 }
 
 .legal-hero-grid {
@@ -1432,5 +1509,10 @@ textarea {
 
   .nav-dropdown.open .nav-submenu {
     display: flex;
+  }
+
+  .nav-dropdown.open .nav-submenu.mega-menu {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
