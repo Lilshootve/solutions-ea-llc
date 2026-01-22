@@ -34,6 +34,11 @@ p {
   color: var(--muted);
 }
 
+h1 {
+  background-clip: unset;
+  -webkit-background-clip: unset;
+}
+
 .skip-link {
   position: absolute;
   left: -999px;
@@ -148,7 +153,7 @@ textarea {
 }
 
 .section-subtitle {
-  color: var(--muted);
+  color: var(--surface);
   margin: 0 0 2rem;
   max-width: 760px;
   font-size: 1.02rem;
@@ -635,6 +640,7 @@ a.nav-cta {
   font-size: clamp(2.2rem, 3.8vw, 3.2rem);
   letter-spacing: -0.02em;
   font-weight: 700;
+  color: rgba(242, 177, 0, 1);
 }
 
 .page-hero p {
