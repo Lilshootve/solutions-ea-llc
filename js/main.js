@@ -1,4 +1,12 @@
 (() => {
+  const yearTargets = document.querySelectorAll('[data-year]');
+  if (yearTargets.length) {
+    const currentYear = String(new Date().getFullYear());
+    yearTargets.forEach((node) => {
+      node.textContent = currentYear;
+    });
+  }
+
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-menu]');
   const submenuToggle = document.querySelector('[data-submenu-toggle]');
