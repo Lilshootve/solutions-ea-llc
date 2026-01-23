@@ -134,4 +134,151 @@
     updateParallax();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
+
+  const wizard = document.querySelector('[data-quote-wizard]');
+  if (wizard) {
+    const steps = Array.from(wizard.querySelectorAll('.wizard-step'));
+    const progressSteps = Array.from(
+      document.querySelectorAll('.wizard-progress-step')
+    );
+    const nextButton = wizard.querySelector('[data-wizard-next]');
+    const backButton = wizard.querySelector('[data-wizard-back]');
+    const submitButton = wizard.querySelector('[data-wizard-submit]');
+    const successPanel = document.querySelector('[data-wizard-success]');
+    let currentStep = 0;
+
+    const updateOptionStates = () => {
+      const inputs = wizard.querySelectorAll(
+        '.wizard-option input[type=\"radio\"], .wizard-option input[type=\"checkbox\"]'
+      );
+      inputs.forEach((input) => {
+        const option = input.closest('.wizard-option');
+        if (!option) return;
+        if (input.type === 'radio') {
+          const group = wizard.querySelectorAll(
+            `input[name=\"${input.name}\"]`
+          );
+          group.forEach((radio) => {
+            radio.closest('.wizard-option')?.classList.toggle(
+              'is-selected',
+              radio.checked
+            );
+          });
+        } else {
+          option.classList.toggle('is-selected', input.checked);
+        }
+      });
+    };
+
+    const isStepValid = () => {
+      const step = steps[currentStep];
+      if (!step) return false;
+      const requiredInputs = Array.from(step.querySelectorAll('[required]'));
+      const hasMissingRequired = requiredInputs.some((input) => {
+        if (input.type === 'radio') {
+          return !step.querySelector(`input[name=\"${input.name}\"]:checked`);
+        }
+        return !input.value.trim();
+      });
+
+      if (step.dataset.step === '2') {
+        const checked = step.querySelector(
+          'input[name=\"servicesNeeded\"]:checked'
+        );
+        return !hasMissingRequired && Boolean(checked);
+      }
+
+      if (step.dataset.step === '4') {
+        const checked = step.querySelector(
+          'input[name=\"serviceReasons\"]:checked'
+        );
+        return !hasMissingRequired && Boolean(checked);
+      }
+
+      return !hasMissingRequired;
+    };
+
+    const updateWizard = () => {
+      steps.forEach((step, index) => {
+        step.classList.toggle('is-active', index === currentStep);
+      });
+      progressSteps.forEach((step, index) => {
+        step.classList.toggle('is-active', index === currentStep);
+        step.classList.toggle('is-complete', index < currentStep);
+      });
+      if (backButton) {
+        backButton.disabled = currentStep === 0;
+      }
+      if (nextButton) {
+        nextButton.style.display =
+          currentStep === steps.length - 1 ? 'none' : 'inline-flex';
+        nextButton.disabled = !isStepValid();
+      }
+      if (submitButton) {
+        submitButton.style.display =
+          currentStep === steps.length - 1 ? 'inline-flex' : 'none';
+        submitButton.disabled = !isStepValid();
+      }
+    };
+
+    wizard.addEventListener('input', () => {
+      updateOptionStates();
+      updateWizard();
+    });
+
+    wizard.addEventListener('change', () => {
+      updateOptionStates();
+      updateWizard();
+    });
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        if (!isStepValid()) return;
+        currentStep = Math.min(currentStep + 1, steps.length - 1);
+        updateWizard();
+        const behavior = prefersReducedMotion ? 'auto' : 'smooth';
+        steps[currentStep]?.scrollIntoView({ behavior, block: 'start' });
+      });
+    }
+
+    if (backButton) {
+      backButton.addEventListener('click', () => {
+        currentStep = Math.max(currentStep - 1, 0);
+        updateWizard();
+        const behavior = prefersReducedMotion ? 'auto' : 'smooth';
+        steps[currentStep]?.scrollIntoView({ behavior, block: 'start' });
+      });
+    }
+
+    wizard.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!isStepValid()) return;
+      const data = new FormData(wizard);
+      const lines = [
+        `Facility Type: ${data.get('facilityType') || ''}`,
+        `Services Needed: ${(data.getAll('servicesNeeded') || []).join(', ')}`,
+        `Square Footage: ${data.get('squareFootage') || ''}`,
+        `City/State: ${data.get('cityState') || ''}`,
+        `Timeframe: ${data.get('timeframe') || ''}`,
+        `Scope Description: ${data.get('scopeDescription') || ''}`,
+        `Service Reasons: ${(data.getAll('serviceReasons') || []).join(', ')}`,
+        `Full Name: ${data.get('fullName') || ''}`,
+        `Company: ${data.get('company') || ''}`,
+        `Email: ${data.get('email') || ''}`,
+        `Phone: ${data.get('phone') || ''}`,
+        `Preferred Contact: ${data.get('preferredContact') || ''}`,
+        `Best Time: ${data.get('bestTime') || ''}`,
+      ];
+      const subject = encodeURIComponent('Quote Request - SOLUTIONS EA LLC');
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:sales@solutionseallc.com?subject=${subject}&body=${body}`;
+      wizard.classList.add('is-hidden');
+      if (successPanel) {
+        successPanel.classList.add('is-visible');
+      }
+    });
+
+    updateOptionStates();
+    updateWizard();
+  }
 })();
