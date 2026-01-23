@@ -2007,6 +2007,112 @@ textarea {
   }
 }
 
+@media (max-width: 768px) {
+  .top-bar-inner {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .top-bar-actions {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .top-bar-link {
+    white-space: nowrap;
+    padding: 0 0.65rem;
+  }
+
+  .nav-links.open {
+    max-height: calc(100vh - var(--top-bar-height) - 72px);
+    overflow-y: auto;
+  }
+
+  .hero-grid,
+  .section-split,
+  .section-split.reverse,
+  .service-layout,
+  .service-block,
+  .service-block.reverse,
+  .about-grid,
+  .contact-grid,
+  .legal-hero-grid,
+  .wizard-layout,
+  .feature-grid,
+  .process-steps,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .mini-grid,
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-split.reverse > :first-child,
+  .service-block.reverse .service-content {
+    order: 0;
+  }
+
+  .section-split.reverse > :last-child,
+  .service-block.reverse .service-image {
+    order: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  p,
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .home .home-hero::before,
+  .section-themed::before,
+  .cta-band::before,
+  .legal-hero::before,
+  .service-detail .page-hero::before {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  .home .home-hero .hero-panel {
+    backdrop-filter: blur(6px);
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar-link {
+    font-size: 0.8rem;
+    height: 28px;
+    padding: 0 0.6rem;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .cta-actions .btn,
+  .wizard-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wizard-progress {
+    padding: 0.9rem 1rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
