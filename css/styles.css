@@ -12,6 +12,8 @@ html {
   --muted-on-surface: #5b6670;
   --text-on-dark: #f8fafc;
   --muted-on-dark: #cbd2d9;
+  --text-muted: #5b6670;
+  --text-inverse: #f8fafc;
   --border: #d8dee4;
   --accent: #f2b100;
   --accent-dark: #c59200;
@@ -116,6 +118,11 @@ textarea {
   color: #f8fafc;
 }
 
+.home .section-themed,
+.home .cta-band {
+  background: url("../images/background-hero.jpg") center / cover no-repeat;
+}
+
 .section-themed::before,
 .cta-band::before,
 .legal-hero::before {
@@ -126,6 +133,13 @@ textarea {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 0;
+}
+
+.home .section-themed::before,
+.home .cta-band::before {
+  background: rgba(10, 15, 25, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .section-themed > .container,
@@ -653,6 +667,34 @@ a.nav-cta {
   background: rgba(15, 23, 32, 0.55);
   color: #fff;
   border-color: rgba(255, 255, 255, 0.35);
+}
+
+.home .home-hero .hero-panel {
+  background: rgba(15, 23, 32, 0.55);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-on-dark);
+  backdrop-filter: blur(8px);
+}
+
+.home .home-hero .hero-panel h3,
+.home .home-hero .hero-panel .card-title {
+  color: var(--text-on-dark);
+}
+
+.home .home-hero .hero-panel p,
+.home .home-hero .hero-panel .section-subtitle {
+  color: var(--muted-on-dark);
+}
+
+.home .home-hero .btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+}
+
+.home .home-hero .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
 }
 
 .hero-grid {
@@ -1676,6 +1718,11 @@ textarea {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #fff;
+}
+
+::placeholder {
+  color: var(--muted-on-surface);
+  opacity: 1;
 }
 
 textarea {
