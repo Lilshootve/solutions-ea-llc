@@ -1,4 +1,8 @@
 /* SOLUTIONS EA LLC - Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #eef1f4;
   --surface: #ffffff;
@@ -196,6 +200,21 @@ textarea {
   box-shadow: var(--shadow);
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.parallax-bg {
+  background-position: center 0;
+}
+
 .card-title {
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
@@ -227,6 +246,34 @@ textarea {
   border: 1px solid transparent;
   font-weight: 600;
   letter-spacing: 0.01em;
+  transition: transform 180ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary,
+.btn-accent {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before,
+.btn-accent::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.18) 45%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  opacity: 0;
+  transform: translateX(-20%);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
 }
 
 .btn-primary {
@@ -272,6 +319,11 @@ textarea {
   background: #ffffff;
   border-bottom: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(15, 23, 32, 0.08);
+  transition: box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 14px 28px rgba(15, 23, 32, 0.16);
 }
 
 .nav {
@@ -279,6 +331,11 @@ textarea {
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 0;
+  transition: padding 220ms ease;
+}
+
+.site-header.scrolled .nav {
+  padding: 0.95rem 0;
 }
 
 .brand {
@@ -454,6 +511,29 @@ a.nav-cta {
 .nav-dropdown:focus-within .nav-submenu.mega-menu,
 .nav-dropdown.open .nav-submenu.mega-menu {
   display: grid;
+}
+
+@media (hover: hover) {
+  .card,
+  .dept-card,
+  .project-card,
+  .media-card {
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  .card:hover,
+  .dept-card:hover,
+  .project-card:hover,
+  .media-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(15, 23, 32, 0.16);
+  }
+
+  .btn-primary:hover::before,
+  .btn-accent:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .hero {
@@ -1514,5 +1594,16 @@ textarea {
   .nav-dropdown.open .nav-submenu.mega-menu {
     display: grid;
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
