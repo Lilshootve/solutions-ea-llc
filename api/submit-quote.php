@@ -84,6 +84,7 @@ $sentInternal = $mailer->send(
 );
 
 if (!$sentInternal) {
+    sea_mail_log('Quote form failed: ' . $mailer->getLastError());
     sea_json_response([
         'ok' => false,
         'message' => 'We could not send your request right now. Please call us at 407-639-2669.',
