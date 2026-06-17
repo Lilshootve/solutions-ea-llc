@@ -1,0 +1,2 @@
+# Local secrets — copy from api/config.example.php if missing
+api/config.php

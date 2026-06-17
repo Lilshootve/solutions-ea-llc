@@ -147,7 +147,20 @@
               </div>
             </div>
 
-            <form class="wizard-card" id="quote-wizard" data-quote-wizard>
+            <form
+              class="wizard-card"
+              id="quote-wizard"
+              data-quote-wizard
+              data-quote-endpoint="/api/submit-quote.php"
+              novalidate
+            >
+              <div class="form-alert" data-form-alert role="alert" aria-live="polite" hidden></div>
+
+              <div class="wizard-honeypot" aria-hidden="true">
+                <label for="website">Website</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+
               <div class="wizard-step" data-step="1">
                 <fieldset class="wizard-fieldset">
                   <legend>Facility type</legend>
@@ -172,6 +185,16 @@
                       <input type="radio" name="facilityType" value="Other" required />
                       <strong>Other</strong>
                     </label>
+                  </div>
+                  <div class="form-conditional" data-conditional="facilityTypeOther" hidden>
+                    <label for="facilityTypeOther">Please describe your facility type</label>
+                    <input
+                      id="facilityTypeOther"
+                      name="facilityTypeOther"
+                      type="text"
+                      placeholder="e.g., Medical clinic, retail storefront, mixed-use"
+                      data-conditional-required
+                    />
                   </div>
                 </fieldset>
               </div>
@@ -212,6 +235,20 @@
                       <input type="checkbox" name="servicesNeeded" value="Residential Post-Construction Cleaning" />
                       <strong>Residential Post-Construction Cleaning</strong>
                     </label>
+                    <label class="wizard-option">
+                      <input type="checkbox" name="servicesNeeded" value="Other" data-triggers-other="servicesOther" />
+                      <strong>Other / Not listed</strong>
+                    </label>
+                  </div>
+                  <div class="form-conditional" data-conditional="servicesOther" hidden>
+                    <label for="servicesOther">Describe the service you need</label>
+                    <input
+                      id="servicesOther"
+                      name="servicesOther"
+                      type="text"
+                      placeholder="Tell us what you are looking for"
+                      data-conditional-required
+                    />
                   </div>
                 </fieldset>
               </div>
@@ -272,9 +309,19 @@
                       <strong>Tenant move-in</strong>
                     </label>
                     <label class="wizard-option">
-                      <input type="checkbox" name="serviceReasons" value="Other" />
+                      <input type="checkbox" name="serviceReasons" value="Other" data-triggers-other="serviceReasonsOther" />
                       <strong>Other</strong>
                     </label>
+                  </div>
+                  <div class="form-conditional" data-conditional="serviceReasonsOther" hidden>
+                    <label for="serviceReasonsOther">Please describe your reason</label>
+                    <input
+                      id="serviceReasonsOther"
+                      name="serviceReasonsOther"
+                      type="text"
+                      placeholder="Share any context that helps us scope the project"
+                      data-conditional-required
+                    />
                   </div>
                 </fieldset>
               </div>
@@ -321,6 +368,18 @@
                       </select>
                     </div>
                   </div>
+                  <div>
+                    <label for="additionalNotes">Additional notes or questions (optional)</label>
+                    <textarea
+                      id="additionalNotes"
+                      name="additionalNotes"
+                      placeholder="Anything else we should know — access restrictions, site conditions, billing requirements, etc."
+                    ></textarea>
+                  </div>
+                  <div class="form-recaptcha" data-recaptcha-container hidden>
+                    <p class="form-recaptcha-label">Security verification</p>
+                    <div data-recaptcha-widget></div>
+                  </div>
                 </fieldset>
               </div>
 
@@ -332,9 +391,10 @@
             </form>
 
             <div class="wizard-card wizard-success" data-wizard-success>
-              <h2 class="section-title">Thanks — we received your request</h2>
-              <p class="section-subtitle">
-                Your details are ready for review. If you need immediate support, call our team.
+              <h2 class="section-title">Thank you — your request was submitted</h2>
+              <p class="section-subtitle" data-success-message>
+                We received your quote request and sent a confirmation to your email.
+                Our team will follow up within one business day. For urgent projects, call us directly.
               </p>
               <div class="wizard-actions">
                 <a class="btn btn-primary" href="tel:+14076392669">Call Us Now</a>
@@ -438,6 +498,7 @@
         "areaServed": "US"
       }
     </script>
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
     <script src="js/main.js"></script>
   </body>
 </html>

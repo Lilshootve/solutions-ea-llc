@@ -1699,6 +1699,78 @@ form {
   font-size: 0.95rem;
 }
 
+.wizard-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-alert {
+  margin-bottom: 1.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.form-alert.is-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.form-alert.is-success {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.form-conditional {
+  margin-top: 1rem;
+}
+
+.form-conditional[hidden] {
+  display: none !important;
+}
+
+.field-error {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b91c1c;
+}
+
+.has-error input,
+.has-error select,
+.has-error textarea {
+  border-color: #f87171;
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.35);
+}
+
+.form-recaptcha {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.form-recaptcha[hidden] {
+  display: none !important;
+}
+
+.form-recaptcha-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-on-surface);
+}
+
+.wizard-actions .btn[aria-busy="true"] {
+  opacity: 0.85;
+  cursor: wait;
+}
+
 .form-row {
   display: grid;
   gap: 1rem;
